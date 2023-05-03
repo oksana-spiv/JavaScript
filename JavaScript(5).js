@@ -96,6 +96,19 @@ price: 78,
 },
 ];
 
+console.log(post.author);
+console.log(post.comments[0].rating.dislikes);
+console.log(post.comments[1].userId);
+console.log(post.comments[1].text);
+const pictures = products.filter((img) => {
+if (img.photos == 0 || img.photos == undefined) return false
+return true
+});
+console.log(pictures);
+products.sort((max, min) => max.price - min.price);
+console.log(products);
+
+
 []()
 []()
 **Задание 5**
