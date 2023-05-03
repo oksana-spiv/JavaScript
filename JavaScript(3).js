@@ -1,7 +1,7 @@
 //Задание 1
 //Создайте функцию которая возводит переданное число в куб, необходимо вывести в консоль результат 2^3 степени + 3 ^ 3 степени
 function cubed (num) {
-return Math.pow(num)
+return Math.pow(num, 3)
 }
 const a = cubed(2);
 const b = cubed(3);
