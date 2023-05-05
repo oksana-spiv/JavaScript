@@ -44,19 +44,20 @@ for (let i = 0; i < numbers.length; i += 1) { // перебираем элеме
 console.log(numbers); 
 
 //2 способ
-const myArray =[1, '-', '-', '-','-']
-myArray[0]=Math.random(1, 9);
-myArray[1]=Math.random(1, 9);
-myArray[2]=Math.random(1, 9);
-myArray[3]=Math.random(1, 9);
-myArray[4]=Math.random(1, 9);
-console.log(myArray);
+new Array(length ) 
+//Array.from({ length: length })
+const length = 5;
+const min = 1;
+const max = 9;
+Array[i] = Math.floor(Math.random() * (max - min + 1)) + min; 
+console.log(Array); 
 
 //3.2.
 ....
+const min = arr[0];
 for (let i=0; i<arr.length; i++) {
   if (arr[i]>arr[0])
-    const min = arr[0];
+   
   else
      const min = arr[i];
 }
@@ -66,7 +67,7 @@ console.log(min);
 ....
 for (let i=0; i<arr.length; i++) {
   if (arr[i]===3)
-    console.log($есть тройка в массиве);
+    console.log($"есть тройка в массиве");
 }
 
 
@@ -81,7 +82,7 @@ xxxx
 xxxxx
 
 const myArray =[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-for (let i=0; i<arr.length; i++) {
+for (let i=0; i<myArray.length; i++) {
   const  a=a+'x'
   console.log(a);
 }
