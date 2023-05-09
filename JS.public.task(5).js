@@ -182,5 +182,78 @@ console.log(values);
 const res = values.reduce((acc,el) => acc.concat(Object.values(el), [])
 console.log(sum);
 
-//4
 
+/////
+const values = Object.values(obj)
+const arr1 = Object.values(values[0])
+const arr2 = Object.values(values[1])
+const arr3 = Object.values(values[2])
+
+// console.log(arr1);
+// console.log(arr2);
+// console.log(arr3);
+
+// const arr4 = [1,2,3,4,5,6]
+// console.log(arr4.concat(arr3));
+
+
+
+const res = values.reduce((acc, el) => acc.concat(Object.values(el)), [])
+// console.log(res);
+
+//4
+//4.1. Создайте объект reddles
+//4.2. Добавьте свойства question,answer
+//4.3. Создайте метод askQuestion, который спрашивает у пользователя вопрос question и сравнивает ответ с answer
+//4.4. если ответил неверно, то в консоль выводится текст: "вы проиграли"
+//4.5. *создать 2 подсказки, если пользователь ответил неверно
+const riddles {
+  question: "Зимой и летом одноим цветом",
+   answer: "Ель",
+   hints: ["В лесу родилась", "Пришла она нарядная"],
+   askQuestion: () => {
+     const userAnswer = prompt(this.question);
+     if (userAnswer === this.answer) {
+       console.log ("Good");
+     } else {
+       console.log (':('); //смайл
+       let hintIndex = 0;
+       while(userAnswer !== this.answer && hintIndex < this.hint.length) {
+         console.log (this.hints[hintIndex]);
+         hintIndex++
+         userAnswer = prompt(this.question);
+       }
+       if (userAnswer === this.answer) {
+         console.log ("Good");
+       } else {
+         console.log ("Вы проиграли");
+       }
+     }         
+     } 
+    }
+    riddles.askQuestion(); 
+  //
+const riddles = {
+question: "Зимой и летом одним цветом",
+answer: "ель",
+hints: ["В лесу родилась", "И она нарядная"],
+askQuestion() {
+let userAnswer = prompt(this.question).trim().toLowerCase();
+if (userAnswer === this.answer) {
+console.log("Good");
+} else {
+console.log(':(');
+let hintIndex = 0;
+while(userAnswer !== this.answer && hintIndex < this.hints.length) {
+console.log(this.hints[hintIndex]);
+hintIndex++
+userAnswer = prompt(this.question).trim().toLowerCase(); //проверка на наличие пробелов
+}
+if (userAnswer === this.answer) {
+console.log("Good");
+} else {
+console.log('Вы проиграли');
+}
+}
+}
+};
