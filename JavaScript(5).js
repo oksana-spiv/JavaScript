@@ -1,6 +1,5 @@
-Урок 5. Объекты в JavaScript
-Задание 1
-Дан объект numbers. Необходимо в консоль вывести все значения больше или равные 3.
+//Задание 1
+//Дан объект numbers. Необходимо в консоль вывести все значения больше или равные 3.
 
 const numbers = {
 keyin1: 1,
@@ -11,11 +10,13 @@ keyin5: 5,
 keyin6: 6,
 keyin7: 7,
 }
+for (let item in numbers) {
 
+ if (numbers[item] >= 3) console.log(numbers[item]);
+ }
 
-
-Задание 2
-Необходимо из объекта, который лежит в константе post вывести значения, к которым приписан комментарий, в консоль.
+//Задание 2
+//Необходимо из объекта, который лежит в константе post вывести значения, к которым приписан комментарий, в консоль.
 
 const post = {
 author: "John", // вывести этот текст
@@ -41,11 +42,13 @@ dislikes: 1,
 },
 ],
 };
+console.log(post.author);
+console.log(post.comments[0].rating.dislikes);
+console.log(post.comments[1].userId);
+console.log(post.comments[1].text);
 
-
-
-Задание 3
-Дан массив products, необходимо цену каждого продукта уменьшить на 15% используя метод forEach.
+//Задание 3
+//Дан массив products, необходимо цену каждого продукта уменьшить на 15% используя метод forEach.
 
 const products = [
 {
@@ -61,61 +64,64 @@ id: 1,
 price: 1000,
 },
 ];
-
-
-
-Задание 4
-1. Необходимо вывести в консоль массив продуктов в котором есть хоть одна фотография используя метод filter. Исходные данные - массив products.
-2. Необходимо отсортировать массив products используя метод sort по цене, начиная с самой маленькой, заканчивая самой большой ценой, после чего вывести отсортированный массив в консоль.
-
-```
-const products = [
-{
-id: 3,
-price: 127,
-photos: [
-"1.jpg",
-"2.jpg",
-],
-},
-{
-id: 5,
-price: 499,
-photos: [],
-},
-{
-id: 10,
-price: 26,
-photos: [
-"3.jpg",
-],
-},
-{
-id: 8,
-price: 78,
-},
-];
-
-console.log(post.author);
-console.log(post.comments[0].rating.dislikes);
-console.log(post.comments[1].userId);
-console.log(post.comments[1].text);
-const pictures = products.filter((img) => {
-if (img.photos == 0 || img.photos == undefined) return false
-return true
+products.forEach(function(item, i, products) {
+products[i].price = products[i].price * 0.85
 });
-console.log(pictures);
-products.sort((max, min) => max.price - min.price);
+
 console.log(products);
 
+//Задание 4
+//1. Необходимо вывести в консоль массив продуктов в котором есть хоть одна фотография используя метод filter. Исходные данные - массив products.
+//2. Необходимо отсортировать массив products используя метод sort по цене, начиная с самой маленькой, заканчивая самой большой ценой, после чего вывести отсортированный массив в консоль.
 
-[]()
-[]()
-**Задание 5**
-Дано 2 массива 
+const products = [
+    {
+      id: 3,
+      price: 127,
+      photos: [
+        "1.jpg",
+        "2.jpg",
+      ],
+    },
+    {
+      id: 5,
+      price: 499,
+      photos: [],
+    },
+    {
+      id: 10,
+      price: 26,
+      photos: [
+        "3.jpg",
+      ],
+    },
+    {
+      id: 8,
+      price: 78,
+    },
+  ];
+
+  const ph = products.filter(
+    e => "photos" in e && e.photos.length !== 0
+  );
+  console.log(ph);
+
+  const sort = products.sort((p1, p2) => p1.price - p2.price);
+  console.log(sort);
+
+
+
+//**Задание 5**
+//Дано 2 массива 
+//const en = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+//const ru = ["понедельник", "вторник", "среда", "четверг", "пятница", "суббота", "воскресенье"];
+//Вам необходимо объединить 2 этих массива, чтобы значения первого массива были ключами, а значения второго массива — значениями.
+
 const en = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 const ru = ["понедельник", "вторник", "среда", "четверг", "пятница", "суббота", "воскресенье"];
-```
+const obj = {};
+for (let i=0; i<en.length; i++) {
+  obj[en[i]] = ru[i]
+}
+console.log(obj);
 
-
-Вам необходимо объединить 2 этих массива, чтобы значения первого массива были ключами, а значения второго массива — значениями.
