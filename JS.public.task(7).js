@@ -73,17 +73,25 @@ while (parentElement) { //пока есть родительский элеме�
     parentElement = parentElement.parentNode; //цикл остановится на body, когда закончатся родительские элементы
 }
 
-// 4.
+// 4.1. Дано поле ввода и кнопка отправить. Необходимо реализовать функционал, если пользователь нажимает на кнопку отправить, а поле ввода пустое, 
+// то под полем ввода и кнопкой должен появиться заголовок h2 с текстом "вы не заполнили поле ввода"
+// 4.2. Цвет у рамки сделать красным
+<form action="#">
+    <input type="text">
+    <button class="btn">отправить</button>
+</form>
+
+
 const form = document.querySelector('form');
 const input = document.querySelector('input');
 const btn = document.querySelector('.btn');
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
-    if(input.value.trim() === '') {
+    if(input.value.trim() === '') { //trim опускает пробелы
         const errorMassage = document.createElement('h2');
         errorMassage.textContent = 'Вы не заполнили поле ввода';
         errorMassage.style.border = '2px solid red';
-        form.insertBefore(errorMassage, btn);
+        form.insertBefore(errorMassage, btn); //чтобы не вылазило на рамки формы
     }
 })
