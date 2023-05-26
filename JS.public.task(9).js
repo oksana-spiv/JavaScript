@@ -37,9 +37,9 @@ const submitButton = document.getElementById('submit');
 
 submitButton.addEventListener('click', function () {
   if (teaButton.checked) {
-    const error = document.createElement('div'); //если не установлен флажок, то создаем элемент div...
-    error.textContent = 'Необходимо согласиться с условием';
-    checkbox.parentNode.appendChild(error)
+    alert('Чай закончился');
+  } else if (coffeeButton.checked) {
+    alert('Кофе закончился');
   }
 });
 
@@ -47,9 +47,30 @@ submitButton.addEventListener('click', function () {
 3.1. Создать поле ввода (пароль)
 3.2. Кнопка отправить
 3.3.Если пользователь вводит текст “пароль” то поле ввода должно быть подсвечено зеленым цветом
-3.4. Если пароль неверный, у поля ввода появляется красная обводка и текст “пароль неверный”
+3.4. Если пароль неверный, у поля ввода появляется красная обводка и текст “пароль неверный” //Задание на валидность, проверку
 */
+<input type="password" id="password-field" placeholder="Введите пароль"> 
+<button id="submit-button">Отправить</buttton>
+<div id="message"> </div>
 
+const passwordField = document.getElementById('password-field');
+const submitButton = document.getElementById('submit-button');
+const vessage = document.getElementById('message');
+
+submitButton.addEventListener('click',  () => {
+  if (passwordField.value === 'пароль') {
+    message.style.color = 'green';
+    passwordField.stye.borderColor = 'green';
+    passwordField.stye.borderWidth = '2px';
+    passwordField.setCustomValidity('Пароль верный'); //текмт будет выведен в окошке комментария, если пароь верен
+    passwordField.reportValidity();
+  } else { {
+    message.style.color = 'red';
+    passwordField.stye.borderColor = 'red';
+    passwordField.stye.borderWidth = '2px';
+    passwordField.setCustomValidity('Пароль не верный'); //текмт будет выведен в окошке комментария, если пароь  не верен и рамка будет красной
+    passwordField.reportValidity();
+});
 
 
 /*
