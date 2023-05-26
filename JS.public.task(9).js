@@ -77,4 +77,26 @@ submitButton.addEventListener('click',  () => {
 4.1.Создать поле ввода и под ним заголовок h1 с текстом “Заголовок”
 4.2. При вводе текста в поле ввода необходимо чтобы текст внутри заголовка менятся на введенный в поле ввода
 */
+<input type="text" id="input" placeholder="Введите новый заголовок "> 
+<h1 id="header">заголовок</h1>
+
+
+const passwordField = document.getElementById('password-field');
+const submitButton = document.getElementById('submit-button');
+const vessage = document.getElementById('message'); 1-00
+
+submitButton.addEventListener('click',  () => {
+  if (passwordField.value === 'пароль') {
+    message.style.color = 'green';
+    passwordField.stye.borderColor = 'green';
+    passwordField.stye.borderWidth = '2px';
+    passwordField.setCustomValidity('Пароль верный'); //текмт будет выведен в окошке комментария, если пароь верен
+    passwordField.reportValidity();
+  } else { {
+    message.style.color = 'red';
+    passwordField.stye.borderColor = 'red';
+    passwordField.stye.borderWidth = '2px';
+    passwordField.setCustomValidity('Пароль не верный'); //текмт будет выведен в окошке комментария, если пароь  не верен и рамка будет красной
+    passwordField.reportValidity();
+});
 
