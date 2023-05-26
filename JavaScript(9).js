@@ -78,22 +78,4 @@
         formEl.addEventListener('change', checkValue);
 
 
-  const task3 = document.querySelector('form');
-    const forms_el = task3.querySelectorAll('input, select');
-    task3.addEventListener('submit', event => {
-      forms_el.forEach(forms_el => {
-        if (forms_el.value === '') {
-          forms_el.classList.add('error')
-          event.preventDefault();
-        }
-      })
-    })
-
-    task3.addEventListener('input', event => {
-      if (!event.target.classList.contains('form-control')) {
-        return;
-      }
-      event.target.value === ''
-        ? event.target.classList.add('error')
-        : event.target.classList.remove('error')
-    });
+ 
